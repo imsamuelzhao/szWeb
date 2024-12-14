@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>睿皓猪动态群 - 日历</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="page-title">睿皓猪动态群 - 日历</h1>
+        
+        <div class="calendar-header">
+            <button id="prevMonth">&lt;</button>
+            <h2 id="monthDisplay"></h2>
+            <button id="nextMonth">&gt;</button>
+        </div>
+        
+        <div class="control-panel">
+            <div class="left-controls">
+                <button id="backToToday" class="info-button">回到今天</button>
+            </div>
+            <div class="right-controls">
+                <button id="batchAddEvents" class="primary-button">批量添加事件</button>
+                <button id="deleteMonthEvents" class="warning-button">删除当月事件</button>
+                <button id="clearAllEvents" class="danger-button">删除所有事件</button>
+            </div>
+        </div>
+        
+        <div class="weekdays">
+            <div>一</div>
+            <div>二</div>
+            <div>三</div>
+            <div>四</div>
+            <div>五</div>
+            <div>六</div>
+            <div>日</div>
+        </div>
+        
+        <div id="calendar" class="calendar-grid"></div>
+
+        <div id="eventModal" class="modal">
+            <div class="modal-content">
+                <h3>事件管理</h3>
+                <input type="text" id="eventTitle" placeholder="新事件标题">
+                <textarea id="eventDescription" placeholder="新事件描述"></textarea>
+                <div class="modal-buttons">
+                    <button id="saveEvent">添加事件</button>
+                    <button id="closeModal">关闭</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="batchEventModal" class="modal">
+            <div class="modal-content">
+                <h3>批量添加事件</h3>
+                <div class="batch-input-container">
+                    <table id="batchEventTable">
+                        <thead>
+                            <tr>
+                                <th>日期</th>
+                                <th>事件标题</th>
+                                <th>事件描述</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="date" class="date-input"></td>
+                                <td><input type="text" class="title-input"></td>
+                                <td><textarea class="description-input" rows="2"></textarea></td>
+                                <td><button class="remove-row">删除</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button id="addRow" class="secondary-button">添加一行</button>
+                </div>
+                <div class="modal-buttons">
+                    <button id="saveBatchEvents">保存</button>
+                    <button id="closeBatchModal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
